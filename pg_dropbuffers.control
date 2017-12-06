@@ -1,0 +1,6 @@
+# pg_dropbuffers
+comment = 'Drop buffers, and probably lose data'
+default_version = '0.0.1'
+module_pathname = '$libdir/pg_dropbuffers'
+relocatable = false
+
