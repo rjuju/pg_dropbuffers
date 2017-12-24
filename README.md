@@ -1,8 +1,8 @@
 pg_dropbuffers
 ==============
 
-Small extension to drop buffers from shared_buffers without having to restart
-your cluster.
+Small PostgreSQL extension to drop buffers from shared_buffers without having to
+restart your cluster.
 
 Obviously, this is just for testing purpose, you **should not** use this
 extension on a production server, unless you want to ruin the performance, and
@@ -24,10 +24,14 @@ sudoers file:
 This function will return void if the system cache was dropped succesfully, and
 will throw an error if it failed.
 
+**pg_drop_caches**: Wrapper for dropping both the shared buffers and the system
+cache.
+
 Usage
 -----
 
 ```sql
 SELECT pg_drop_current_db_buffers();
 SELECT pg_drop_system_cache();
+SELECT pg_drop_caches();
 ```

@@ -17,3 +17,10 @@ CREATE FUNCTION pg_drop_system_cache()
     RETURNS void
     LANGUAGE c COST 100
 AS '$libdir/pg_dropbuffers', 'pg_drop_system_cache';
+
+CREATE FUNCTION pg_drop_caches() RETURNS VOID AS $$
+BEGIN
+    PERFORM pg_drop_current_db_buffers();
+    PERFORM pg_drop_system_cache();
+END;
+$$ LANGUAGE plpgsql;
