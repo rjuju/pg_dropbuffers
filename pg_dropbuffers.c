@@ -49,6 +49,7 @@ pg_drop_current_db_buffers(PG_FUNCTION_ARGS)
 	FlushDatabaseBuffers(MyDatabaseId);
 	/* buffers can still be dirty here */
 	DropDatabaseBuffers(MyDatabaseId);
+    elog(LOG, "dropped shared buffers");
 
 	PG_RETURN_VOID();
 }
