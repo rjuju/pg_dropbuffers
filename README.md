@@ -35,3 +35,17 @@ SELECT pg_drop_current_db_buffers();
 SELECT pg_drop_system_cache();
 SELECT pg_drop_caches();
 ```
+
+Installation instructions
+-------------------------
+
+Compile and install the extension:
+```sh
+PATH=/path/to/pg/bin:$PATH make
+PATH=/path/to/pg/bin:$PATH sudo make install
+```
+
+Then in psql:
+```
+CREATE EXTENSION pg_dropbuffers;
+```
