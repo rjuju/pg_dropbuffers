@@ -42,7 +42,7 @@ Installation instructions
 Compile and install the extension:
 ```sh
 PATH=/path/to/pg/bin:$PATH make
-PATH=/path/to/pg/bin:$PATH make install
+PATH=/path/to/pg/bin:$PATH sudo make install
 ```
 
 Then in psql:
